@@ -4,7 +4,7 @@ on:
   release:
     types: [published]
 jobs:
-  notify-api:
+  one:
     runs-on: ubuntu-latest
     steps:
       - name: Dump GitHub context
