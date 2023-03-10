@@ -1,0 +1,12 @@
+name: "label-created"
+on:
+  label:
+    types: [created]
+jobs:
+  one:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          TAG_NAME: ${{ github.event.release.tag_name }}
+        run: echo "$TAG_NAME"
