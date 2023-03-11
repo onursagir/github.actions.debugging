@@ -23,4 +23,4 @@ jobs:
     needs: one
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ toJSON(needs) }}
+      - run: echo ${{ toJSON(one.outputs) }}
