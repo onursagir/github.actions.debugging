@@ -9,6 +9,13 @@
   "release": {
     "branches": [
       "main"
+    ],
+    "plugins": [
+      "semantic-release-export-data"
     ]
+  },
+  "devDependencies": {
+    "semantic-release": "^20.1.1",
+    "semantic-release-export-data": "^1.0.1"
   }
 }
