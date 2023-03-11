@@ -18,7 +18,8 @@ jobs:
     outputs:
       new-release-published: ${{ steps.get-next-version.outputs.new-release-published }}
       new-release-version: ${{ steps.get-next-version.outputs.new-release-version }}
-  two: 
+  two:
     needs: one
-    steps: 
+    runs-on: ubuntu-latest
+    steps:
       - run: echo ${{ toJSON(needs.one.outputs) }}
