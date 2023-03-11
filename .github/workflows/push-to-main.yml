@@ -13,7 +13,7 @@ jobs:
           cache: yarn
           node-version: 18
       - id: release
-        run: yarn && yarn semantic-release
+        run: yarn && yarn semantic-release --dry-run
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     outputs:
