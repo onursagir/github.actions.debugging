@@ -13,7 +13,7 @@ jobs:
           cache: yarn
           node-version: 18
       - id: release
-        run: yarn && yarn semantic-release --dry-run
+        run: yarn && yarn semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     outputs:
@@ -21,6 +21,7 @@ jobs:
       new-release-version: ${{ steps.release.outputs.new-release-version }}
   two:
     needs: one
+    if: needs.one.outputs.new-release-published == 'true'
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ needs.one.outputs.new-release-version }}
