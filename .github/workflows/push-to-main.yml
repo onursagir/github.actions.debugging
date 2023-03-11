@@ -16,9 +16,9 @@ jobs:
         run: yarn && yarn semantic-release --dry-run
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    outputs:
-      new-release-published: ${{ steps.release.outputs.new-release-published }}
-      new-release-version: ${{ steps.release.outputs.new-release-version }}
+    # outputs:
+    #   new-release-published: ${{ steps.release.outputs.new-release-published }}
+    #   new-release-version: ${{ steps.release.outputs.new-release-version }}
   two:
     needs: one
     runs-on: ubuntu-latest
