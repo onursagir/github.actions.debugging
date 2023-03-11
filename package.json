@@ -11,6 +11,7 @@
       "main"
     ],
     "plugins": [
+      "@semantic-release/github",
       "semantic-release-export-data"
     ]
   },
